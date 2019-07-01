@@ -1,6 +1,11 @@
 from pyecharts import Geo
 #from pyecharts.render import make_snapshot
 from snapshot_phantomjs import snapshot
+
+import clr
+clr.AddReference('WebPhoto')
+from WebPhoto import *
+
 import collections
 import tool
 df_all = tool.read_and_clean_all_data()
@@ -27,5 +32,5 @@ del work_place_dict['澳门特别行政区']
 #del work_place_dict['庆阳']
 geo.add("", work_place_dict.keys(), work_place_dict.values(), type="heatmap", is_visualmap=True, visual_range=[0, 30], visual_text_color="#fff")
 geo.render("岗位-城市分布热力图.html")
-
+WebSnapshotsHelper.Exwebphoto("https://www.jb51.net/article/163543.htm","fsfsa");
 #make_snapshot(snapshot,geo.render(),'岗位-城市分布热力图.png')
