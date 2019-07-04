@@ -69,8 +69,7 @@ scale =[
     '50-150人',
     '150-500人',
     '500-2000人',
-    '2000人以上',
-    '少于15人'
+    '2000人以上'
 ]
 def read_and_clean_all_data():
 
@@ -150,7 +149,7 @@ def drawBar(attr_name,size,num,angle,title,xlabel,ylabel,dir_name):
     plt.xlabel(xlabel)
     plt.xticks(rotation=angle)
     plt.ylabel(ylabel)
-    #plt.savefig("./image/300dpi/不同职位需求柱状图-300dpi.jpg", dpi=300, bbox_inches='tight')
+    plt.savefig("./"+title+".jpg", dpi=300, bbox_inches='tight')
     #plt.savefig("./image/200dpi/不同职位需求柱状图-200dpi.jpg", dpi=200, bbox_inches='tight')
     #plt.savefig("./image/100dpi/不同职位需求柱状图-100dpi.jpg", dpi=100, bbox_inches='tight')
     plt.show()
@@ -309,5 +308,6 @@ area = [hunan,
         anhui,
         xianggang,
         aomen,
-        chongqing
+        chongqing,
+        shan_xi
         ]
