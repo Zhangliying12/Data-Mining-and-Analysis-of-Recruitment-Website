@@ -36,7 +36,7 @@ public class BaseDao {
 	 * 数据库密码<br>
 	 * 数据库默认密码为root
 	 */
-	private static final String DATABASE_PASSWORD = "123456";
+	private static final String DATABASE_PASSWORD = "root";
 
 	/**
 	 * 打开一个连接

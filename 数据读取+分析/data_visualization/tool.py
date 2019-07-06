@@ -71,6 +71,7 @@ scale =[
     '500-2000人',
     '2000人以上'
 ]
+
 def read_and_clean_all_data():
 
     # 合并所有数据库中的数据
@@ -153,6 +154,7 @@ def drawBar(attr_name,size,num,angle,title,xlabel,ylabel,dir_name):
     #plt.savefig("./image/200dpi/不同职位需求柱状图-200dpi.jpg", dpi=200, bbox_inches='tight')
     #plt.savefig("./image/100dpi/不同职位需求柱状图-100dpi.jpg", dpi=100, bbox_inches='tight')
     plt.show()
+
 
 def drawWordCloud(attr_name):
     from wordcloud import WordCloud, ImageColorGenerator

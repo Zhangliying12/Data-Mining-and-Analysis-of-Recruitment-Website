@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
-import MySQLdb
+import pymysql
 import position_info as pi
 import tool
 
@@ -35,7 +35,7 @@ attr = [
 
 
 #连接数据库
-conn = MySQLdb.connect(host="localhost",user="root",passwd="root",db="job_info",charset="utf8")
+conn = pymysql.connect(host="localhost",user="root",passwd="root",db="job_info",charset="utf8")
 
 def read_from_db(table_name):
     sql = "select * from " + table_name
@@ -74,9 +74,9 @@ def clean_data(df):
     return df
 
 # 对所有数据进行清洗
-print(len(df_all))
+#print(len(df_all))
 df_all = clean_data(df_all)
-print(len(df_all))
+#print(len(df_all))
 
 
 # 获取用户提交的信息
@@ -97,13 +97,13 @@ expected_bonus = expected_bonus.split(",")
 expected_company_finance = df_user_input['expected_company_finance'].values[id]
 
 
-print(degree)
-print(experience)
-print(expected_place)
-print(expected_job)
-print(expected_min_salary)
-print(expected_company_finance)
-print(expected_bonus)
+# print(degree)
+# print(experience)
+# print(expected_place)
+# print(expected_job)
+# print(expected_min_salary)
+# print(expected_company_finance)
+# print(expected_bonus)
 
 # 提取合适的数据
 
@@ -115,18 +115,14 @@ for a in tool.area:
     place_dict[a[0]] = df_all[df_all['work_place'].isin(a)]
 if expected_place != '不限':
     df_all = place_dict[expected_place]
-print(len(df_all))
 
 if expected_company_finance != '不做要求':
     df_all = df_all[df_all['company_finance'] == expected_company_finance]
-print(len(df_all))
 
 if degree != '不限':
     df_all = df_all[df_all['degree'] == degree]
-print(len(df_all))
 
 df_all = df_all[df_all['salary_min'] >= expected_min_salary]
-print(len(df_all))
 
 # 包含职位关键词的职位全部提取到df_all
 df_new = pd.DataFrame()
@@ -149,26 +145,3 @@ analyse.analyse_data(df_all,
                      expected_company_finance,
                      expected_bonus,
                      id)
-
-"""
-position_num_tip = "根据您的选择，"
-if len(df_all) == 0:
-    position_num_tip += "暂无岗位推荐，建议亲改变条件再试一试呢。\n"
-    if degree == '博士':
-        position_num_tip += "由于博士学历岗位较少，可尝试将学历条件放宽。\n"
-    if expected_place not in famous_place:
-        position_num_tip += "由于"+expected_place+"地区岗位较少，以下地区需求量较大：\n"
-        for fp in famous_place:
-            position_num_tip += fp+" "
-else:
-    position_num_tip += "我们为您找到合适职位信息"+str(len(df_all))+"条。\n"
-
-position_duty_tip = "您选择的职位有以下职责和要求：\n" + pi.duty_dict[expected_job]
-
-file_name = "tips"+str(id)+'.txt'
-with open(file_name,'w') as f:
-    f.write(position_num_tip)
-    f.write(position_duty_tip)
-
-print(pi.duty_dict.keys())
-"""

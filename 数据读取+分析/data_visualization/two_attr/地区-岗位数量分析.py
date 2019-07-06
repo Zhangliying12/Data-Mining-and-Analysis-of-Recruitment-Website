@@ -17,7 +17,7 @@ for a in tool.area:
 work_place_dict= dict(sorted(work_place_dict.items(), key=lambda d:d[1], reverse = True))
 del work_place_dict['香港特别行政区']
 del work_place_dict['澳门特别行政区']
-plt.figure(figsize=(20,9))
+plt.figure(figsize=(12,9))
 plt.bar(work_place_dict.keys(), work_place_dict.values())
 plt.title('分地区岗位需求')
 plt.xlabel('地区')

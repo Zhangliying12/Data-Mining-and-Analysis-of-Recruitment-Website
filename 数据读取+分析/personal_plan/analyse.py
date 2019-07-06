@@ -1,5 +1,4 @@
-import collections
-
+import random
 import tool
 import position_info as pi
 
@@ -38,10 +37,10 @@ def analyse_data(df_all,
         if i == 10:
             job_info += "岗位信息过多，只显示10条以供参考\n\n"
 
-        recommend_tip = "经过多方面考虑，给您推荐以下职位：\n"
+        recommend_tip = "\n经过多方面考虑，给您推荐以下职位：\n"
         index_dict = {}
         for d in df_all.values:
-            print(d)
+            #print(d)
             place = d[5]
             for a in tool.area:
                 if place in a:
@@ -54,21 +53,26 @@ def analyse_data(df_all,
             index_dict[mixed_index] = d
         index_dict = dict(sorted(index_dict.items(), key=lambda d:d[0],reverse = True))
         #index_dict = collections.OrderedDict(index_dict)
-        print(index_dict)
+        #print(index_dict)
         for k,e in index_dict.items():
             recommend_tip += "\t职位名：" +  str(e[0]) + \
                              "\t招聘链接：" + str(e[11]) + "\n" +\
                              "\t公司名："+ str(e[6]) + \
                              "\t该职位最高薪资：" + str(e[2]) + "k" + \
                              "\t公司规模："+str(e[9]) + \
-                             "\t公司融资情况："+str(e[8])
+                             "\t公司融资情况："+str(e[8])+"\n\n"
             break;
 
     position_duty_tip = "您选择的职位有以下职责和要求：\n" + pi.duty_dict[expected_job]+"\n\n"
 
-    file_name = "tips" + str(id) + '.txt'
+    chicken_soup_len = len(tool.chicken_soup)
+    chicken_soup = "心灵鸡汤："+tool.chicken_soup[random.randint(0,chicken_soup_len-1)] + "\n"
+
+
+    file_name = "C:/GraduateSchedule/schedule.txt"
     with open(file_name, 'w') as f:
         f.write(position_num_tip)
         f.write(job_info)
         f.write(recommend_tip)
         f.write(position_duty_tip)
+        f.write(chicken_soup)
