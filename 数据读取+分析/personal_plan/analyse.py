@@ -70,7 +70,7 @@ def analyse_data(df_all,
 
 
     file_name = "C:/GraduateSchedule/schedule.txt"
-    with open(file_name, 'w') as f:
+    with open(file_name, 'w', encoding='utf-8') as f:
         f.write(position_num_tip)
         f.write(job_info)
         f.write(recommend_tip)

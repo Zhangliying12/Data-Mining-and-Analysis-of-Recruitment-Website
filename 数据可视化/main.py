@@ -109,7 +109,7 @@ city_salary.city_salary(get_all_data)
 
 #positiontype_salarymean_and_number.mean_and_number(1)
 
-#word_cloud.position_type(get_all_data)
+word_cloud.position_type(get_all_data)
 
 #company_type.company_type(get_all_data)
 
@@ -130,4 +130,4 @@ city_salary.city_salary(get_all_data)
 
 #company_scale_salary.company_scale_salary(get_all_data)
 
-city_salary.city_salary(get_all_data)
+#city_salary.city_salary(get_all_data)

@@ -52,9 +52,11 @@ def company_type(get_all_data):
             color = color,
             edgecolor = 'black')
     for a,b in zip(attr_temp[:10],value_temp[:10]):
-        plt.text(a,b+0.6,b,ha='center',va='bottom')
-    plt.xlabel("公司类型")
-    plt.ylabel("数量")
-    plt.title("公司类型-数量关系图")
+        plt.text(a,b+0.6,b,ha='center',va='bottom',fontsize = 20)
+    plt.xlabel("公司类型",fontsize=20)
+    plt.ylabel("数量",fontsize=20)
+    plt.xticks(fontsize=10)
+    plt.yticks(fontsize=20)
+    plt.title("公司类型-数量关系图",fontsize=20)
     plt.savefig('C:/WeSite/DataCharts/公司概况/不同公司类型柱状图-100dpi.jpg',dpi=100)
     plt.show()

@@ -30,7 +30,11 @@ def hotcompany_position(get_all_data):
             value,
             edgecolor='black')
     for a,b in zip(attr,value):
-        plt.text(a,b+0.6,b,ha='center',va='bottom')
+        plt.text(a,b+0.6,b,ha='center',va='bottom',fontsize = 20)
+    #plt.xlabel("公司名",fontsize = 20)
+    plt.ylabel("岗位数量",fontsize = 20)
+    plt.title("公司岗位数量TOP20",fontsize = 20)
     plt.xticks(rotation=90)
+    plt.yticks(fontsize = 20)
     plt.savefig('C:/WeSite/DataCharts/公司概况/公司岗位数量TOP20柱状图-100dpi.jpg', dpi=100)
     plt.show()

@@ -132,6 +132,7 @@ for key,value in pi.position_keywords.items():
             df_new = pd.concat([df_new,df_all[df_all['position'].str.contains(v)]])
 df_all = df_new
 
+print(df_all)
 if experience != '不限':
     df_all = df_all[df_all['experience'] == experience]
 

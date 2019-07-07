@@ -65,4 +65,5 @@ def position_type(get_all_data):
     wordcloud = wordcloud.generate(cut_text)
     plt.imshow(wordcloud,interpolation = 'bilinear')
     plt.axis('off')
+    plt.savefig('C:/WeSite/DataCharts/岗位概况/职位类型词云.jpg', dpi=100)
     plt.show()

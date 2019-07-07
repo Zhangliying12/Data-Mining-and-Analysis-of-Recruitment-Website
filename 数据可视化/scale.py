@@ -22,7 +22,7 @@ def company_scale(get_data_all):
         '500-2000人',
         '2000人以上'
     ]
-    plt.figure(figsize=[10,10])
+    plt.figure(figsize=[13,13])
 
     data_dict = collections.Counter(get_data_all['company_scale'])
     data_dict_ord = collections.OrderedDict()
@@ -43,10 +43,12 @@ def company_scale(get_data_all):
                                     pctdistance=0.6)  # 数值距圆心半径倍数距离
 
     plt.axis('equal')
-    plt.rcParams.update({'font.size': 15})
-    plt.legend(title='规模',
-               loc=2,
-               prop={'family': 'SimHei', 'size': 10})
-    plt.title("公司规模统计饼状图")
+    for t in text1:
+        t.set_size=(30)
+    for t in text2:
+        t.set_size=(30)
+    #plt.rcParams.update({'font.size': 20})
+    plt.legend(loc=0)
+    plt.title("公司规模统计饼状图",fontsize = 20)
     plt.savefig('C:/WeSite/DataCharts/公司概况/公司规模统计饼状图-100dpi.jpg', dpi=100)
     plt.show()

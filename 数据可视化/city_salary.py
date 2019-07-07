@@ -130,21 +130,21 @@ def city_salary(get_all_data):
     del place_salary['台湾']
     del place_salary['澳门特别行政区']
     del place_salary['香港特别行政区']
-    key = []
-    value = []
-    for k,v in place_salary.items():
-        key.append(k)
-        value.append(v)
+
+    place_salary = dict(sorted(place_salary.items(),key=lambda d:d[1],reverse=False))
+    key = list(place_salary.keys())
+    value = list(place_salary.values())
     plt.figure(figsize=(10,10))
     plt.barh(key,
              value,
              edgecolor = '#0000AA'
-
     )
     for a,b in zip(key,value):
-        plt.text(b+0.8,a,'%.2f'%b,ha='center',va = 'bottom')
-    plt.xlabel('各地区平均薪资')
-    plt.ylabel('地区')
-    plt.title('地区和平均薪资分布')
+        plt.text(b+0.8,a,'%.2f'%b,ha='center',va = 'bottom',fontsize = 10)
+    plt.xlabel('各地区平均薪资',fontsize = 20)
+    plt.ylabel('地区',fontsize = 15)
+    plt.title('地区和平均薪资分布',fontsize = 20)
+    plt.xticks(fontsize = 20)
+    plt.yticks(fontsize = 15)
     plt.savefig("C:/WeSite/DataCharts/薪资关联/地区-薪资分析-100dpi.jpg")
     plt.show()

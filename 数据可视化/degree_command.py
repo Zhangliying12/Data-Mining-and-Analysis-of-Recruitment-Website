@@ -31,7 +31,6 @@ def degree_command(get_all_data):
     attr = get_all_data_ord.keys()
     value = get_all_data_ord.values()
     colors = ['springgreen','yellowgreen','lightskyblue','yellow','peachpuff']
-    explode = [0.1,0,0,0,0]
 
     plt.figure(figsize=[10,10])
     plt.axes(aspect = 1)
@@ -39,15 +38,15 @@ def degree_command(get_all_data):
                                        labels = attr,
                                        autopct = "%.2f%%",
                                        colors = colors,
-                                       explode = explode,
-                                       shadow = True)
+                                       shadow = False)
     plt.legend(wedges,
                attr,
                fontsize = 12,
                title='学历分布',
                loc = 'center left',
-               bbox_to_anchor = (1,0,0.35,1.7)
+               bbox_to_anchor = (1,0,0.15,1.7)
                )
-    plt.title('学历需求')
+    plt.axis('equal')
+    plt.title('学历需求',fontsize = 20)
     plt.savefig('C:/WeSite/DataCharts/岗位概况/相关要求/学历要求分布饼状图-100dpi.jpg', dpi=100)
     plt.show()

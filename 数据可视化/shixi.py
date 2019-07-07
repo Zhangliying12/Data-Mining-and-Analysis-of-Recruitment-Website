@@ -24,13 +24,19 @@ def shixi(get_all_data):
     explode = [0.1,0]
     color = ['cyan','peachpuff']
     plt.axes(aspect =1)
-    plt.pie(value,
+
+    patches, l_text, p_text = plt.pie(value,
             labels = labels,
             colors = color,
             explode = explode,
             autopct = '%.2f%%',
             shadow = True)
-    
+
+    for t in l_text:
+        t.set_size = 20
+    for t in p_text:
+        t.set_size = 20
+    plt.axis('equal')
     plt.legend(loc='center left',
                bbox_to_anchor = (0.9,0,0,1.7),
                shadow = True,

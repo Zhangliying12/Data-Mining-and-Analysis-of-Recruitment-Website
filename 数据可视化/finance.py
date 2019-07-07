@@ -24,7 +24,7 @@ def finance(get_all_data):
         'D轮及以上',
         '上市公司'
     ]
-    plt.figure(figsize=[10,10])
+    plt.figure(figsize=[13,13])
     data_dict = collections.Counter(get_all_data['company_finance'])
     data_dict_ord = collections.OrderedDict()
 
@@ -43,11 +43,14 @@ def finance(get_all_data):
                                     startangle=90,  # 逆时针起始角度设置
                                     pctdistance=0.6)  # 数值距圆心半径倍数距离
 
+
     plt.axis('equal')
-    plt.rcParams.update({'font.size': 8})
-    plt.legend(title='规模',
-               loc=2,
-               prop={'family': 'SimHei', 'size': 6})
-    plt.title('融资分布')
+    for t in text1:
+        t.set_size=15
+    for t in text2:
+        t.set_size=15
+    #plt.rcParams.update({'font.size': 20})
+    plt.legend(loc=0,prop={'family': 'SimHei', 'size': 20})
+    plt.title('融资分布',fontsize = 20)
     plt.savefig('C:/WeSite/DataCharts/公司概况/公司融资情况分析-100dpi.jpg', dpi=100)
     plt.show()   

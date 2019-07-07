@@ -121,11 +121,13 @@ def mean_and_number(key):
                  color = color,
                  edgecolor = 'black')
         for a,b in zip(keyword,mean_salary):
-            plt.text(b+0.8,a,'%.2f'%b,ha='center',va='bottom')
+            plt.text(b+1,a,'%.2f'%b,ha='center',va='bottom',fontsize=15)
 
-        plt.xlabel("平均薪资")
-        plt.ylabel("职位类别")
-        plt.title("职位类别与平均薪资关系")
+        plt.xlabel("平均薪资",fontsize=20)
+        plt.ylabel("职位类别",fontsize=20)
+        plt.xticks(fontsize=20)
+        plt.yticks(fontsize=20)
+        plt.title("职位类别与平均薪资关系",fontsize=20)
         plt.savefig('C:/WeSite/DataCharts/岗位概况/薪资概况/按职位类型平均工资分析柱状图-100dpi.jpg', dpi=100)
         plt.show()
 
@@ -153,7 +155,9 @@ def mean_and_number(key):
                         type_project_management,
                         type_software_test,
                         type_frontend]
-        plt.figure(figsize=(10,5))
+        plt.figure(figsize=(13,13))
+        position_num_dict = dict(zip(keyword,positiontype))
+        position_num_dict = dict(sorted(position_num_dict.items(),key=lambda d:d[1],reverse=False))
         color = ['red',
                  'orange',
                  'yellow',
@@ -165,13 +169,17 @@ def mean_and_number(key):
                  '#A52A2A',
                  '#7171C6',
                  '#698B22'] 
-        plt.barh(keyword,
-                 positiontype,
+        plt.barh(list(position_num_dict.keys()),
+                 list(position_num_dict.values()),
                  color = color,
                  edgecolor = '#0000AA')
         for a,b in zip(keyword,positiontype):
-            plt.text(b+0.8,a,b,ha='center',va='bottom')
-
+            plt.text(b+0.8,a,b,ha='center',va='bottom',fontsize=20)
+        plt.xlabel("岗位数量",fontsize=20)
+        plt.xticks(fontsize=20)
+        plt.ylabel("岗位类型",fontsize=20)
+        plt.yticks(fontsize=20)
+        plt.title("岗位类型-数量需求",fontsize=20)
         plt.savefig('C:/WeSite/DataCharts/岗位概况/不同职位需求柱状图-100dpi.jpg', dpi=100)
         plt.show()
 

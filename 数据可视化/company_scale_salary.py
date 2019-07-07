@@ -51,10 +51,12 @@ def company_scale_salary(get_all_data):
             color = color,
             edgecolor='black')
     for a,b in zip(attr,value):
-        plt.text(a,b+0.3,'%.2f'%b,ha='center',va='bottom')
-    plt.xlabel('公司规模')
-    plt.ylabel('平均薪资')
-    plt.title('公司规模与平均薪资关系图')
+        plt.text(a,b+0.3,'%.2f'%b,ha='center',va='bottom',fontsize = 20)
+    plt.xlabel('公司规模',fontsize = 20)
+    plt.ylabel('平均薪资',fontsize = 20)
+    plt.xticks(fontsize=17)
+    plt.yticks(fontsize=20)
+    plt.title('公司规模与平均薪资关系图',fontsize = 20)
 
     plt.savefig("C:/WeSite/DataCharts/薪资关联/公司规模与薪资水平-100dpi.jpg")
     plt.show()

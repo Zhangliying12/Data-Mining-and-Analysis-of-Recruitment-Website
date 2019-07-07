@@ -36,7 +36,7 @@ def experience_command(get_all_data):
     wedges, texts, autotexts = plt.pie(x = value,
                                        autopct = "%.2f%%",
                                        colors = colors,
-                                       shadow = True)
+                                       shadow = False)
     plt.legend(wedges,
                experience,
                fontsize = 12,
@@ -44,6 +44,8 @@ def experience_command(get_all_data):
                loc = 'center left',
                bbox_to_anchor = (1,0,0.15,1.7)
                )
-    plt.title('经验需求')
+    plt.axis('equal')
+    plt.title('经验需求',fontsize = 20)
+
     plt.savefig('C:/WeSite/DataCharts/岗位概况/相关要求/工作经验要求分布饼状图-100dpi.jpg',dpi=100,bbox_inches = 'tight')
     plt.show()

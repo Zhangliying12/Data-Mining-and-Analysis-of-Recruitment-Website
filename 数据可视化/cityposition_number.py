@@ -136,10 +136,11 @@ def cityposition_number(get_all_data):
     for a,b in zip(attr,value):
         plt.text(a,b+0.3,b,ha='center',va='bottom')
 
-    plt.xlabel("地区")
-    plt.ylabel("职位数量")
-    plt.title("地区岗位需求分布")
-    plt.xticks(rotation = 90)
+    plt.xlabel("地区", fontsize = 20)
+    plt.ylabel("职位数量", fontsize = 20)
+    plt.title("地区岗位需求分布", fontsize = 20)
+    plt.xticks(rotation = 90, fontsize = 15)
+    plt.yticks(fontsize = 20)
     plt.savefig('C:/WeSite/DataCharts/岗位概况/分地区岗位需求分布-100dpi.jpg', dpi=100)
     plt.show()
 
