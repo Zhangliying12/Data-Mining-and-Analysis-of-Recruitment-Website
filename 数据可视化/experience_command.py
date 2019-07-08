@@ -33,10 +33,14 @@ def experience_command(get_all_data):
 
     plt.figure(figsize=(10,10))
     plt.axes(aspect = 1)
-    wedges, texts, autotexts = plt.pie(x = value,
-                                       autopct = "%.2f%%",
-                                       colors = colors,
-                                       shadow = False)
+    wedges, texts, autotexts = plt.pie(value,
+                          labels=experience,
+                          colors=colors,
+                          labeldistance = 1.1,#图例距圆心半径倍距离
+                          autopct = '%3.2f%%', #数值保留固定小数位
+                          shadow = False, #无阴影设置
+                          startangle =90, #逆时针起始角度设置
+                          pctdistance = 0.6) #数值距圆心半径倍数距离
     plt.legend(wedges,
                experience,
                fontsize = 12,
@@ -48,4 +52,4 @@ def experience_command(get_all_data):
     plt.title('经验需求',fontsize = 20)
 
     plt.savefig('C:/WeSite/DataCharts/岗位概况/相关要求/工作经验要求分布饼状图-100dpi.jpg',dpi=100,bbox_inches = 'tight')
-    plt.show()
+    #plt.show()

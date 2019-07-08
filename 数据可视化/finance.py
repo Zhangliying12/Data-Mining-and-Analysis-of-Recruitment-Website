@@ -35,22 +35,21 @@ def finance(get_all_data):
     labels = data_dict_ord.keys()
     colors = ['springgreen','yellowgreen','lightskyblue','yellow','peachpuff','seashell','cyan','lightgrey']
     patches, text1, text2 = plt.pie(sizes,
-                                    labels=labels,
-                                    colors=colors,
-                                    labeldistance=1.1,  # 图例距圆心半径倍距离
-                                    autopct='%3.2f%%',  # 数值保留固定小数位
-                                    shadow=True,  # 无阴影设置
-                                    startangle=90,  # 逆时针起始角度设置
-                                    pctdistance=0.6)  # 数值距圆心半径倍数距离
+                          labels=labels,
+                          colors=colors,
+                          labeldistance = 1.1,#图例距圆心半径倍距离
+                          autopct = '%3.2f%%', #数值保留固定小数位
+                          shadow = False, #无阴影设置
+                          startangle =90, #逆时针起始角度设置
+                          pctdistance = 0.6) #数值距圆心半径倍数距离
 
-
-    plt.axis('equal')
     for t in text1:
-        t.set_size=15
+        t.set_size(20)
     for t in text2:
-        t.set_size=15
+        t.set_size(20)
+    plt.axis('equal')
     #plt.rcParams.update({'font.size': 20})
-    plt.legend(loc=0,prop={'family': 'SimHei', 'size': 20})
-    plt.title('融资分布',fontsize = 20)
+    #plt.legend(loc=0,prop={'family': 'SimHei', 'size': 20})
+    #plt.title('融资分布',fontsize = 30)
     plt.savefig('C:/WeSite/DataCharts/公司概况/公司融资情况分析-100dpi.jpg', dpi=100)
-    plt.show()   
+    #plt.show()

@@ -59,4 +59,4 @@ def company_type(get_all_data):
     plt.yticks(fontsize=20)
     plt.title("公司类型-数量关系图",fontsize=20)
     plt.savefig('C:/WeSite/DataCharts/公司概况/不同公司类型柱状图-100dpi.jpg',dpi=100)
-    plt.show()
+    #plt.show()

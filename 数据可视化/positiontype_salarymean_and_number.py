@@ -123,13 +123,13 @@ def mean_and_number(key):
         for a,b in zip(keyword,mean_salary):
             plt.text(b+1,a,'%.2f'%b,ha='center',va='bottom',fontsize=15)
 
-        plt.xlabel("平均薪资",fontsize=20)
+        plt.xlabel("平均薪资（单位：千元）",fontsize=20)
         plt.ylabel("职位类别",fontsize=20)
         plt.xticks(fontsize=20)
         plt.yticks(fontsize=20)
         plt.title("职位类别与平均薪资关系",fontsize=20)
         plt.savefig('C:/WeSite/DataCharts/岗位概况/薪资概况/按职位类型平均工资分析柱状图-100dpi.jpg', dpi=100)
-        plt.show()
+        #plt.show()
 
     elif key==2:      
         type_ai = len(get_ai)
@@ -181,7 +181,7 @@ def mean_and_number(key):
         plt.yticks(fontsize=20)
         plt.title("岗位类型-数量需求",fontsize=20)
         plt.savefig('C:/WeSite/DataCharts/岗位概况/不同职位需求柱状图-100dpi.jpg', dpi=100)
-        plt.show()
+        #plt.show()
 
     else:
         return 0

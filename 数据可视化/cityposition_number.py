@@ -142,5 +142,5 @@ def cityposition_number(get_all_data):
     plt.xticks(rotation = 90, fontsize = 15)
     plt.yticks(fontsize = 20)
     plt.savefig('C:/WeSite/DataCharts/岗位概况/分地区岗位需求分布-100dpi.jpg', dpi=100)
-    plt.show()
+    #plt.show()
 

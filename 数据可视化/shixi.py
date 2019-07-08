@@ -45,4 +45,4 @@ def shixi(get_all_data):
                        '非实习岗位:'+str(len(get_notshixi))
                 )
     plt.savefig('C:/WeSite/DataCharts/岗位概况/实习/整体数据分布饼状图-100dpi.jpg', dpi=100)
-    plt.show()
+    #plt.show()

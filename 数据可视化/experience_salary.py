@@ -46,9 +46,9 @@ def experience_salary(get_all_data):
     for a,b in zip(attr,value):
         plt.text(a,b+0.4,'%.2f'%b,ha='center',va='bottom',fontsize=20)
     plt.xlabel('工作经验',fontsize = 20)
-    plt.ylabel('平均薪资',fontsize = 20)
+    plt.ylabel('平均薪资（单位：千元）',fontsize = 20)
     plt.title('工作经验与平均薪资的关系',fontsize = 20)
     plt.xticks(fontsize=12)
     plt.yticks(fontsize=20)
     plt.savefig("C:/WeSite/DataCharts/薪资关联/经验要求与薪资水平-100dpi.jpg")
-    plt.show()
+    #plt.show()

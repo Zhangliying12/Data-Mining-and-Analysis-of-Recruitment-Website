@@ -141,10 +141,10 @@ def city_salary(get_all_data):
     )
     for a,b in zip(key,value):
         plt.text(b+0.8,a,'%.2f'%b,ha='center',va = 'bottom',fontsize = 10)
-    plt.xlabel('各地区平均薪资',fontsize = 20)
+    plt.xlabel('平均薪资（单位：千元）',fontsize = 20)
     plt.ylabel('地区',fontsize = 15)
     plt.title('地区和平均薪资分布',fontsize = 20)
     plt.xticks(fontsize = 20)
     plt.yticks(fontsize = 15)
     plt.savefig("C:/WeSite/DataCharts/薪资关联/地区-薪资分析-100dpi.jpg")
-    plt.show()
+    #plt.show()

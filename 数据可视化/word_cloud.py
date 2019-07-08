@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Jul  4 11:23:43 2019
-
 @author: DELL-1
 """
 
@@ -30,7 +29,7 @@ def cloud_company_type(get_all_data):
     plt.imshow(wordcloud,interpolation = 'bilinear')
     plt.axis('off')
     plt.savefig('C:/WeSite/DataCharts/公司概况/公司类型词云.jpg',dpi=100)
-    plt.show()
+    #plt.show()
 def cloud_company_bonus(get_all_data):
     cloud_company_bonus = open('cloud_company_bonus.txt','w',encoding='utf-8')
     get_all_data = list(get_all_data['bonus'])
@@ -48,7 +47,7 @@ def cloud_company_bonus(get_all_data):
     plt.imshow(wordcloud,interpolation = 'bilinear')
     plt.axis('off')
     plt.savefig('C:/WeSite/DataCharts/公司概况/工作福利词云.jpg', dpi=100)
-    plt.show()
+    #plt.show()
 def position_type(get_all_data):
     position_type = open('position_type.txt','w',encoding = 'utf-8')
     get_all_data = list(get_all_data['position'])
@@ -66,4 +65,4 @@ def position_type(get_all_data):
     plt.imshow(wordcloud,interpolation = 'bilinear')
     plt.axis('off')
     plt.savefig('C:/WeSite/DataCharts/岗位概况/职位类型词云.jpg', dpi=100)
-    plt.show()
+    #plt.show()

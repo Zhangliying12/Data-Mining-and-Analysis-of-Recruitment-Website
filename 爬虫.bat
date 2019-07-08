@@ -1,0 +1,1 @@
+start C:\Users\79000\Desktop\实训\数据爬取\dist\get_data_from_web.exe

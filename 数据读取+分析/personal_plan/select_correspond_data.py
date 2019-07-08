@@ -64,13 +64,13 @@ def clean_data(df):
     df = df.dropna()
     for att in attr:
         df = df[~df[att].isin([""])]
-    # 去掉work_place值异常的项
+    # # 去掉work_place值异常的项
     df = df[~df['work_place'].str.contains("{{item.city}}")]
-    # 去掉异常值
-    df = df[~df['salary_max'].isin([1])]
-    # 去掉兼职、实习的记录
-    df = df[~df['position'].str.contains("实习")]
-    df = df[~df['position'].str.contains("兼职")]
+    # # 去掉异常值
+    # df = df[~df['salary_max'].isin([1])]
+    # # 去掉兼职、实习的记录
+    # df = df[~df['position'].str.contains("实习")]
+    # df = df[~df['position'].str.contains("兼职")]
     return df
 
 # 对所有数据进行清洗
@@ -107,22 +107,27 @@ expected_company_finance = df_user_input['expected_company_finance'].values[id]
 
 # 提取合适的数据
 
-# 将任职地点规范化为省会城市
-place_dict = {}
-for a in tool.area:
-    if expected_place in a:
-        expected_place = a[0]
-    place_dict[a[0]] = df_all[df_all['work_place'].isin(a)]
+
 if expected_place != '不限':
+    # 将任职地点规范化为省会城市
+    place_dict = {}
+    for a in tool.area:
+        if expected_place in a:
+            expected_place = a[0]
+        place_dict[a[0]] = df_all[df_all['work_place'].isin(a)]
     df_all = place_dict[expected_place]
+print(len(df_all))
 
 if expected_company_finance != '不做要求':
     df_all = df_all[df_all['company_finance'] == expected_company_finance]
+print(len(df_all))
 
 if degree != '不限':
     df_all = df_all[df_all['degree'] == degree]
+print(len(df_all))
 
 df_all = df_all[df_all['salary_min'] >= expected_min_salary]
+print(len(df_all))
 
 # 包含职位关键词的职位全部提取到df_all
 df_new = pd.DataFrame()
@@ -131,10 +136,12 @@ for key,value in pi.position_keywords.items():
         for v in value:
             df_new = pd.concat([df_new,df_all[df_all['position'].str.contains(v)]])
 df_all = df_new
+print(len(df_all))
 
 print(df_all)
-if experience != '不限':
+if experience != '经验不限':
     df_all = df_all[df_all['experience'] == experience]
+print(len(df_all))
 
 import analyse
 analyse.analyse_data(df_all,

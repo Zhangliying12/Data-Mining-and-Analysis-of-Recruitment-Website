@@ -12,11 +12,12 @@ def analyse_data(df_all,
                  expected_bonus,
                  id):
     position_num_tip = "根据您的选择，"
+    job_info = ""
     if len(df_all) == 0:
         position_num_tip += "暂无岗位推荐，建议亲改变条件再试一试呢。\n\n"
         if degree == '博士' or degree == '硕士':
             position_num_tip += "由于博士/硕士学历岗位较少，可尝试将学历条件放宽。\n\n"
-        if expected_place not in tool.famous_place:
+        if expected_place not in tool.famous_place and expected_place != '不限':
             position_num_tip += "由于您选择了" + expected_place + "地区，该地区岗位较少，推荐选择以下需求量大的地区：\n"
             for fp in tool.famous_place:
                 position_num_tip += fp + " "

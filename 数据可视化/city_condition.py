@@ -37,6 +37,9 @@ def area_condition(get_all_data):
             is_visualmap=True,
             is_roam = True)
     geo.render("C:/WeSite/DataCharts/岗位概况/岗位-城市分布图.html",pixel_ratio=0.5)
+    geo.render("./岗位-城市分布图.html", pixel_ratio=0.5)
+
     geo.render("C:/WeSite/DataCharts/岗位概况/岗位-城市分布图.png",pixel_ratio=0.5)
+
     #geo.show_config()
 
