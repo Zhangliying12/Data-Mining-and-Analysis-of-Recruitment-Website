@@ -1,0 +1,9 @@
+C:\Users\79000\Desktop\WcfService\WcfService\bin\WcfService.dll.config
+C:\Users\79000\Desktop\WcfService\WcfService\bin\WcfService.dll
+C:\Users\79000\Desktop\WcfService\WcfService\bin\WcfService.pdb
+C:\Users\79000\Desktop\WcfService\WcfService\bin\MySql.Data.dll
+C:\Users\79000\Desktop\WcfService\WcfService\obj\Release\WcfService.csproj.CoreCompileInputs.cache
+C:\Users\79000\Desktop\WcfService\WcfService\obj\Release\WcfService.csproj.CopyComplete
+C:\Users\79000\Desktop\WcfService\WcfService\obj\Release\WcfService.dll
+C:\Users\79000\Desktop\WcfService\WcfService\obj\Release\WcfService.pdb
+C:\Users\79000\Desktop\WcfService\WcfService\obj\Release\WcfService.csprojAssemblyReference.cache
