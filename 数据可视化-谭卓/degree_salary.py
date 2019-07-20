@@ -33,6 +33,9 @@ def degree_salary(get_all_data):
         dicts[d] = degree_salary[d]
     attr = dicts.keys()
     value = dicts.values()
+    print("学历-薪资")
+    print(attr)
+    print(value)
 
     color = ['red',
              'orange',

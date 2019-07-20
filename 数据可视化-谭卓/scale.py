@@ -32,6 +32,9 @@ def company_scale(get_data_all):
 
     sizes = data_dict_ord.values()
     labels = data_dict_ord.keys()
+    print("公司规模统计")
+    print(sizes)
+    print(labels)
     colors = ['springgreen', 'lightgrey', 'lightskyblue', 'yellow', 'peachpuff', 'cyan']
     patches, text1, text2 = plt.pie(sizes,
                           labels=labels,

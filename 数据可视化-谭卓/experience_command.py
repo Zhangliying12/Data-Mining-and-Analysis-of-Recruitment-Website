@@ -31,6 +31,9 @@ def experience_command(get_all_data):
 
     colors = ['yellow','yellowgreen','lightskyblue','springgreen','cyan','peachpuff','seashell']
 
+    print("经验需求")
+    print(experience)
+    print(value)
     plt.figure(figsize=(10,10))
     plt.axes(aspect = 1)
     wedges, texts, autotexts = plt.pie(value,

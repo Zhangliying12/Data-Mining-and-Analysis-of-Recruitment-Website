@@ -115,7 +115,10 @@ def mean_and_number(key):
                  '#4A4A4A',
                  '#A52A2A',
                  '#7171C6',
-                 '#698B22'] 
+                 '#698B22']
+        print("职位-薪资")
+        print(list(position_salary_dict.keys()))
+        print(list(position_salary_dict.values()))
         plt.barh(list(position_salary_dict.keys()),
                  list(position_salary_dict.values()),
                  color = color,
@@ -158,6 +161,9 @@ def mean_and_number(key):
         plt.figure(figsize=(13,13))
         position_num_dict = dict(zip(keyword,positiontype))
         position_num_dict = dict(sorted(position_num_dict.items(),key=lambda d:d[1],reverse=False))
+        print("职位-数量")
+        print(list(position_num_dict.keys()))
+        print(list(position_num_dict.values()))
         color = ['red',
                  'orange',
                  'yellow',

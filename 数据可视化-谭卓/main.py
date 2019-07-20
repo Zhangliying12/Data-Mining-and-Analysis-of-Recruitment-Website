@@ -33,14 +33,14 @@ get_all_data = data_after_process.data_after_process_()
 '''
     岗位需求分析
 '''
-
-
+"""
 #词云
 word_cloud.cloud_company_type(get_all_data)
 word_cloud.cloud_company_bonus(get_all_data)
 #岗位种类-词云
 word_cloud.position_type(get_all_data)
-
+"""
+"""
 #岗位种类-数量关系
 positiontype_salarymean_and_number.mean_and_number(2)
 
@@ -61,8 +61,9 @@ city_condition.area_condition(get_all_data)
 
 #岗位种类-平均工资
 positiontype_salarymean_and_number.mean_and_number(1)
+"""
 
-
+"""
 '''
     公司状况分析
 '''
@@ -77,7 +78,7 @@ scale.company_scale(get_all_data)
 
 #融资情况--饼状图
 finance.finance(get_all_data)
-
+"""
 
 '''
     薪资待遇分析

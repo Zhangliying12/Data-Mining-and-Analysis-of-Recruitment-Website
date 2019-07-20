@@ -45,6 +45,9 @@ def company_scale_salary(get_all_data):
              '#4A4A4A']
     attr = dicts.keys()
     value = dicts.values()
+    print("公司规模-薪资")
+    print(attr)
+    print(value)
     plt.figure(figsize=(10,10))
     plt.bar(attr,
             value,

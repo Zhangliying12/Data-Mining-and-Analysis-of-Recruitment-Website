@@ -21,6 +21,9 @@ def shixi(get_all_data):
     plt.figure(figsize=[10,10])
     labels = ['实习','非实习']
     value = [len(get_shixi),len(get_notshixi)]
+    print("实习占比")
+    print(labels)
+    print(value)
     explode = [0.1,0]
     color = ['cyan','peachpuff']
     plt.axes(aspect =1)

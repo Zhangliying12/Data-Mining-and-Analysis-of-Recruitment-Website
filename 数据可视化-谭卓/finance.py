@@ -33,6 +33,9 @@ def finance(get_all_data):
 
     sizes = data_dict_ord.values()
     labels = data_dict_ord.keys()
+    print("公司融资统计")
+    print(sizes)
+    print(labels)
     colors = ['springgreen','yellowgreen','lightskyblue','yellow','peachpuff','seashell','cyan','lightgrey']
     patches, text1, text2 = plt.pie(sizes,
                           labels=labels,

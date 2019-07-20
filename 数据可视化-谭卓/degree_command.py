@@ -30,6 +30,9 @@ def degree_command(get_all_data):
         get_all_data_ord[d] = get_all_data[d]
     attr = get_all_data_ord.keys()
     value = get_all_data_ord.values()
+    print("学位需求")
+    print(attr)
+    print(value)
     colors = ['springgreen','yellowgreen','lightskyblue','yellow','peachpuff']
 
     plt.figure(figsize=[10,10])

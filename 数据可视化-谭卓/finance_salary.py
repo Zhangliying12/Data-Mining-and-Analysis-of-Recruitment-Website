@@ -35,6 +35,9 @@ def finance_salary(get_all_data):
 
     attr = dicts.keys()
     value = dicts.values()
+    print("融资情况-薪资")
+    print(attr)
+    print(value)
     plt.figure(figsize=(10,10))
     color = ['red',
              'orange',

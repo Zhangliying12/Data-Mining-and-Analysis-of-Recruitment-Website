@@ -128,6 +128,9 @@ def cityposition_number(get_all_data):
     cityposition_number = dict(sorted(cityposition_number.items(), key=lambda d:d[1], reverse = True))
     attr = cityposition_number.keys()
     value = cityposition_number.values()
+    print("地区-职位数量")
+    print(list(attr))
+    print(list(value))
     plt.figure(figsize=(10,10))
 
     plt.bar(attr,

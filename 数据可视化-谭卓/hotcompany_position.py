@@ -25,7 +25,10 @@ def hotcompany_position(get_all_data):
     hotcompany_position = dict(sorted(hotcompany_position.items(),key=lambda d:d[1],reverse=True))
     attr = hotcompany_position.keys()
     value = hotcompany_position.values()
-    
+
+    print("公司职位-数量")
+    print(attr)
+    print(value)
     plt.figure(figsize=(10,10))
     
     plt.bar(attr,

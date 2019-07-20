@@ -35,7 +35,9 @@ def company_type(get_all_data):
     
     attr_temp = list(company_type.keys())
     value_temp = list(company_type.values())
-    
+    print("公司类型-数量")
+    print(attr_temp)
+    print(value_temp)
     plt.figure(figsize=(10,10))
     color = ['red',
              'orange',

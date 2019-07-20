@@ -31,6 +31,9 @@ def experience_salary(get_all_data):
 
     attr = dicts.keys()
     value = dicts.values()
+    print("经验-薪资")
+    print(attr)
+    print(value)
     color = ['red',
              'orange',
              'yellow',

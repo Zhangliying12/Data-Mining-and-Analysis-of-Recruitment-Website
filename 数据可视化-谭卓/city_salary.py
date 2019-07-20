@@ -134,6 +134,9 @@ def city_salary(get_all_data):
     place_salary = dict(sorted(place_salary.items(),key=lambda d:d[1],reverse=False))
     key = list(place_salary.keys())
     value = list(place_salary.values())
+    print("地区-薪资")
+    print(key)
+    print(value)
     plt.figure(figsize=(10,10))
     plt.barh(key,
              value,
